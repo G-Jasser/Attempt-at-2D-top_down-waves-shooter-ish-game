@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://daspdo0hy3573" path="res://Components/HealthCmp.tscn" id="2_s0xax"]
 [ext_resource type="Texture2D" uid="uid://beh04vp48512v" path="res://Sprites/player.png" id="2_uy8et"]
 [ext_resource type="PackedScene" uid="uid://de4h7tv4t6t0i" path="res://Components/HitboxCmp.tscn" id="3_xtqsj"]
-[ext_resource type="PackedScene" uid="uid://36yj4r06pqrl" path="res://Components/gun_holder.tscn" id="5_fkybt"]
+[ext_resource type="PackedScene" uid="uid://36yj4r06pqrl" path="res://Components/Guns/gun_holder.tscn" id="5_fkybt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ki0xi"]
 radius = 12.0

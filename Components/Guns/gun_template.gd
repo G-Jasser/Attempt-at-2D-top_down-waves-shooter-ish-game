@@ -9,7 +9,7 @@ func track_time_since_last_shot(delta):
 	time_since_last_shot += delta
 
 func is_ready_to_shoot() -> bool:
-	if time_since_last_shot >= gun_stats.fire_rate.get_stat():
+	if time_since_last_shot >= gun_stats.fire_rate:
 		return true
 	else:
 		return false
