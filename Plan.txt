@@ -1,0 +1,13 @@
++ player mvt
++ cursor tracking
++ bullet firing
++ player health
++ enemy
++ enemy hitbox + player damage
++ enemy health
++ bullet hitbox
++ enemy mvt
++ enemy spawn?
+- stats component
+- map
+- player weapons?

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://daspdo0hy3573"]
+
+[ext_resource type="Script" uid="uid://da2jrhgrx01o4" path="res://Components/health_cmp.gd" id="1_5jv61"]
+
+[node name="HealthCmp" type="Node2D"]
+script = ExtResource("1_5jv61")

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bx51rr5132kqp"]
+
+[ext_resource type="PackedScene" uid="uid://vt2cbw8k3i0b" path="res://Scenes/player.tscn" id="1_uy0wv"]
+[ext_resource type="PackedScene" uid="uid://dkkcgkq24g5f0" path="res://Scenes/crosshair.tscn" id="2_tnxeb"]
+[ext_resource type="PackedScene" uid="uid://6sa2ewsspalg" path="res://Scenes/enemy_spider.tscn" id="3_d6275"]
+[ext_resource type="PackedScene" uid="uid://bqmdiis4q3fxw" path="res://Scenes/enemy_spawner.tscn" id="4_jghel"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="Spawner" parent="." instance=ExtResource("4_jghel")]
+position = Vector2(-221, -127)
+enemy_scene = ExtResource("3_d6275")
+
+[node name="Player" parent="." instance=ExtResource("1_uy0wv")]
+position = Vector2(9, 3)
+
+[node name="Enemy" parent="." instance=ExtResource("3_d6275")]
+position = Vector2(-183, 23)
+
+[node name="crosshair" parent="." instance=ExtResource("2_tnxeb")]
+position = Vector2(73, 0)

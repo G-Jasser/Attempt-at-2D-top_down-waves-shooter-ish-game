@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://008w458equl"]
+
+[ext_resource type="Script" uid="uid://bgo8vjrqqdl6i" path="res://Scripts/bullet.gd" id="1_mjfea"]
+[ext_resource type="PackedScene" uid="uid://b0ofcrnlblfu7" path="res://Components/hurt_box.tscn" id="2_c71fx"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_sjnya"]
+
+[sub_resource type="Gradient" id="Gradient_6m0gl"]
+offsets = PackedFloat32Array(0, 0.980519)
+colors = PackedColorArray(0.64, 0, 0.0320001, 1, 0.999895, 0.415234, 0.360534, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_glcms"]
+gradient = SubResource("Gradient_6m0gl")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o74qr"]
+radius = 1.0
+height = 4.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ilp4p"]
+radius = 1.0
+height = 4.0
+
+[node name="Bullet" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_mjfea")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+rotation = 1.57079
+scale = Vector2(2, 2)
+mesh = SubResource("CapsuleMesh_sjnya")
+texture = SubResource("GradientTexture1D_glcms")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_o74qr")
+
+[node name="Hurtbox" parent="." instance=ExtResource("2_c71fx")]
+target_layer_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_ilp4p")
+debug_color = Color(0.8, 0.18, 0.056, 0.305882)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
