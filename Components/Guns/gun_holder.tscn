@@ -1,11 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://36yj4r06pqrl"]
+[gd_scene load_steps=7 format=3 uid="uid://36yj4r06pqrl"]
 
-[ext_resource type="Script" uid="uid://dvpy1r76trfnc" path="res://Scripts/gun.gd" id="1_dc3lj"]
+[ext_resource type="Script" uid="uid://dvpy1r76trfnc" path="res://Components/Guns/gun_holder.gd" id="1_dc3lj"]
 [ext_resource type="Script" uid="uid://cyytd3ivuniqe" path="res://Components/Guns/gun_basic.gd" id="2_ssxjx"]
 [ext_resource type="PackedScene" uid="uid://008w458equl" path="res://Scenes/bullet.tscn" id="3_nxfwh"]
 [ext_resource type="Script" uid="uid://b1t7ovh5egfdb" path="res://Components/Guns/gun_stat.gd" id="5_ebmmd"]
 
-[sub_resource type="Resource" id="Resource_c2xhy"]
+[sub_resource type="Resource" id="Resource_k5qqt"]
 script = ExtResource("5_ebmmd")
 damage = 1
 knockback = 0.0
@@ -13,10 +13,22 @@ fire_rate = 0.5
 bullet_scene = ExtResource("3_nxfwh")
 metadata/_custom_type_script = "uid://b1t7ovh5egfdb"
 
-[node name="GunHolder" type="Marker2D" node_paths=PackedStringArray("gun")]
+[sub_resource type="Resource" id="Resource_dc3lj"]
+script = ExtResource("5_ebmmd")
+damage = 1
+knockback = 0.0
+fire_rate = 0.2
+bullet_scene = ExtResource("3_nxfwh")
+metadata/_custom_type_script = "uid://b1t7ovh5egfdb"
+
+[node name="GunHolder" type="Marker2D" node_paths=PackedStringArray("guns")]
 script = ExtResource("1_dc3lj")
-gun = NodePath("GunBasic")
+guns = [NodePath("GunBasic"), NodePath("GunBasic2")]
 
 [node name="GunBasic" type="Node2D" parent="."]
 script = ExtResource("2_ssxjx")
-gun_stats = SubResource("Resource_c2xhy")
+gun_stats = SubResource("Resource_k5qqt")
+
+[node name="GunBasic2" type="Node2D" parent="."]
+script = ExtResource("2_ssxjx")
+gun_stats = SubResource("Resource_dc3lj")

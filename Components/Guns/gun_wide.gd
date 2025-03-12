@@ -1,0 +1,2 @@
+extends GunTemplate
+class_name GunWide
