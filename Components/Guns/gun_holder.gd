@@ -54,7 +54,7 @@ func display_cursor_on():
 func handle_gun_swapping() -> void:
 	if Input.is_action_just_pressed("GUN_SWAP_UP"):
 		swap_gun_up()
-	if Input.is_action_just_pressed("GUN_SWAP_UP"):
+	if Input.is_action_just_pressed("GUN_SWAP_DOWN"):
 		swap_gun_down()
 	if Input.is_action_just_pressed("GUN_HOTKEY_1"):
 		swap_gun_hotkey(0)
