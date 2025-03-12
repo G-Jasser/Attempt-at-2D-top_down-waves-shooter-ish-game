@@ -5,7 +5,7 @@ class_name GunHolder
 var lock_mouse: bool = true
 
 const MAX_GUNS: int = 3
-var equiped_gun: GunTemplate
+var equipped_gun: GunTemplate
 @export var guns: Array[GunTemplate] = []:
 	set(new_value):
 		guns = new_value
@@ -15,7 +15,7 @@ var equiped_gun: GunTemplate
 
 func _ready():
 	if guns.size() > 0:
-		equiped_gun = guns[0]
+		equipped_gun = guns[0]
 
 
 func _process(delta):
@@ -25,10 +25,10 @@ func _process(delta):
 
 
 func handle_gun_shooting(delta) -> void:
-	if equiped_gun:
-		equiped_gun.track_time_since_last_shot(delta)
+	if equipped_gun:
+		equipped_gun.track_time_since_last_shot(delta)
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-			equiped_gun.shoot(delta)
+			equipped_gun.shoot(delta)
 
 
 func mouse_locking():
@@ -67,36 +67,36 @@ func handle_gun_swapping() -> void:
 func swap_gun_up() -> void:
 	if guns.size() <= 1:
 		return
-		
-	var index: int = guns.find(equiped_gun)
+	
+	var index: int = guns.find(equipped_gun)
 	if index == -1:
 		return
-		
+	
 	index += 1
 	if index >= guns.size():
 		index = 0
-	equiped_gun = guns[index]
+	equipped_gun = guns[index]
 
 
 func swap_gun_down() -> void:
 	if guns.size() <= 1:
 		return
 		
-	var index: int = guns.find(equiped_gun)
+	var index: int = guns.find(equipped_gun)
 	if index == -1:
 		return
-		
+	
 	index -= 1
 	if index < 0:
-		index = 0
-	equiped_gun = guns[index]
+		index = guns.size() - 1
+	equipped_gun = guns[index]
 
 
 func swap_gun_hotkey(index: int) -> void:
 	if index < 0 or index >= guns.size():
 		return
 	
-	if equiped_gun == guns[index]:
+	if equipped_gun == guns[index]:
 		return
 	
-	equiped_gun = guns[index]
+	equipped_gun = guns[index]
