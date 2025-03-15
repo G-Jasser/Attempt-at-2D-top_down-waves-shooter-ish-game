@@ -6,12 +6,19 @@ var lock_mouse: bool = true
 
 const MAX_GUNS: int = 3
 var equipped_gun: GunTemplate
-@export var guns: Array[GunTemplate] = []:
+var guns: Array[GunTemplate] = []:
 	set(new_value):
 		guns = new_value
 		if guns.size() > MAX_GUNS:
 			guns.resize(MAX_GUNS)
 
+func _enter_tree() -> void:
+	for gun in get_children():
+		if gun is GunTemplate:
+			add_gun(gun)
+
+func add_gun(gun: GunTemplate):
+	guns.append(gun)
 
 func _ready():
 	if guns.size() > 0:
