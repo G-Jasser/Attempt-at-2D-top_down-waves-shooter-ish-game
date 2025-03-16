@@ -5,7 +5,7 @@ class_name GunTemplate
 
 var time_since_last_shot: float = 0.0
 
-func track_time_since_last_shot(delta):
+func track_time_since_last_shot(delta) -> void:
 	time_since_last_shot += delta
 
 func is_ready_to_shoot() -> bool:
@@ -14,7 +14,7 @@ func is_ready_to_shoot() -> bool:
 	else:
 		return false
 
-func has_fired():
+func has_fired() -> void:
 	time_since_last_shot = 0.0
 
 
