@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bx51rr5132kqp"]
+
+[ext_resource type="PackedScene" uid="uid://cf8oystgri27y" path="res://Scenes/Levels/Layouts/layout_1.tscn" id="1_nutv8"]
+[ext_resource type="PackedScene" uid="uid://bqmdiis4q3fxw" path="res://Scenes/enemy_spawner.tscn" id="2_05pb0"]
+[ext_resource type="PackedScene" uid="uid://6sa2ewsspalg" path="res://Scenes/enemy_spider.tscn" id="3_dl8mf"]
+[ext_resource type="PackedScene" uid="uid://vt2cbw8k3i0b" path="res://Scenes/player.tscn" id="4_xcayt"]
+[ext_resource type="PackedScene" uid="uid://dkkcgkq24g5f0" path="res://Scenes/crosshair.tscn" id="5_5g41i"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Map" parent="." instance=ExtResource("1_nutv8")]
+position = Vector2(-6, 4)
+metadata/_edit_lock_ = true
+
+[node name="Spawner" parent="." instance=ExtResource("2_05pb0")]
+position = Vector2(457, 80)
+enemy_scene = ExtResource("3_dl8mf")
+
+[node name="Player" parent="." instance=ExtResource("4_xcayt")]
+position = Vector2(107, 80)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(4, 4)
+
+[node name="Enemy" parent="." instance=ExtResource("3_dl8mf")]
+position = Vector2(257, 305)
+
+[node name="crosshair" parent="." instance=ExtResource("5_5g41i")]
+position = Vector2(257, 22)
+scale = Vector2(0.5, 0.5)

@@ -1,29 +1,30 @@
 [gd_scene load_steps=9 format=3 uid="uid://6sa2ewsspalg"]
 
 [ext_resource type="Script" uid="uid://bd76hllsohl0v" path="res://Scripts/enemy.gd" id="1_esujr"]
-[ext_resource type="Texture2D" uid="uid://cnlh0htvrqhta" path="res://Sprites/mob_spider.png" id="2_13mbg"]
+[ext_resource type="Texture2D" uid="uid://cnlh0htvrqhta" path="res://Assets/Sprites/mob_spider.png" id="2_13mbg"]
 [ext_resource type="PackedScene" uid="uid://daspdo0hy3573" path="res://Components/HealthCmp.tscn" id="3_50w2t"]
 [ext_resource type="PackedScene" uid="uid://de4h7tv4t6t0i" path="res://Components/HitboxCmp.tscn" id="4_jjakx"]
 [ext_resource type="PackedScene" uid="uid://b0ofcrnlblfu7" path="res://Components/hurt_box.tscn" id="5_i87rt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7oqs0"]
-radius = 14.0
+radius = 7.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_434br"]
-radius = 14.0
+radius = 7.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ng74p"]
-radius = 5.0
-height = 14.0
+radius = 3.0
+height = 10.0
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_esujr")
+movement_speed = 50.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_13mbg")
 
 [node name="PhysicsCollider" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_7oqs0")
 
 [node name="HealthCmp" parent="." instance=ExtResource("3_50w2t")]
@@ -35,7 +36,6 @@ collision_mask = 0
 health_cmp = NodePath("../HealthCmp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxCmp"]
-position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_434br")
 debug_color = Color(0.99, 0, 0.231, 0.243137)
 
@@ -43,5 +43,5 @@ debug_color = Color(0.99, 0, 0.231, 0.243137)
 target_layer_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(9, 0)
+position = Vector2(5, 0)
 shape = SubResource("CapsuleShape2D_ng74p")

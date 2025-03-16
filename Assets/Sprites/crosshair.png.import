@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnlh0htvrqhta"
-path="res://.godot/imported/mob_spider.png-64766a6f320950e31e06c43fd9f12cfa.ctex"
+uid="uid://v04t1pepxy2h"
+path="res://.godot/imported/crosshair.png-f9e1ed6841917a17a79f96f1872903eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/mob_spider.png"
-dest_files=["res://.godot/imported/mob_spider.png-64766a6f320950e31e06c43fd9f12cfa.ctex"]
+source_file="res://Assets/Sprites/crosshair.png"
+dest_files=["res://.godot/imported/crosshair.png-f9e1ed6841917a17a79f96f1872903eb.ctex"]
 
 [params]
 

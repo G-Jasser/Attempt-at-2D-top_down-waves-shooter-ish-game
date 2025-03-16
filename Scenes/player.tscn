@@ -2,22 +2,22 @@
 
 [ext_resource type="Script" uid="uid://ffdlvd0rhjrp" path="res://Scripts/player.gd" id="1_38dht"]
 [ext_resource type="PackedScene" uid="uid://daspdo0hy3573" path="res://Components/HealthCmp.tscn" id="2_s0xax"]
-[ext_resource type="Texture2D" uid="uid://beh04vp48512v" path="res://Sprites/player.png" id="2_uy8et"]
+[ext_resource type="Texture2D" uid="uid://beh04vp48512v" path="res://Assets/Sprites/player.png" id="2_uy8et"]
 [ext_resource type="PackedScene" uid="uid://de4h7tv4t6t0i" path="res://Components/HitboxCmp.tscn" id="3_xtqsj"]
 [ext_resource type="PackedScene" uid="uid://36yj4r06pqrl" path="res://Components/Guns/gun_holder.tscn" id="5_fkybt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ki0xi"]
-radius = 12.0
+radius = 5.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_luv85"]
-radius = 12.0
+radius = 6.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 motion_mode = 1
 script = ExtResource("1_38dht")
 
 [node name="PhysicsCollider" type="CollisionShape2D" parent="."]
-position = Vector2(-3, -1)
+position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_ki0xi")
 
 [node name="HealthCmp" parent="." instance=ExtResource("2_s0xax")]
@@ -28,12 +28,13 @@ collision_mask = 0
 health_cmp = NodePath("../HealthCmp")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="HitboxCmp"]
-position = Vector2(-3, -1)
+position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_luv85")
 debug_color = Color(0.996735, 0, 0.180813, 0.42)
 
 [node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(0, 2)
+position = Vector2(1, 2)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_uy8et")
 
 [node name="GunHolder" parent="." instance=ExtResource("5_fkybt")]

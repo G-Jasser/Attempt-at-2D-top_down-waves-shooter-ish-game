@@ -3,7 +3,7 @@ class_name Player
 
 @onready var crosshair: Sprite2D = $"../crosshair"
 
-const movement_speed = 200.0
+@export var movement_speed: float = 105
 var health_points: int = 10
 
 func _physics_process(delta):

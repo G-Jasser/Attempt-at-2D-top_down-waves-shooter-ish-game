@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Enemy
 
 @onready var player: Player = get_node("/root/Main/Player")
-@export var movement_speed: float = 100
+@export var movement_speed: float = 60
 
 func _physics_process(delta):
 	if player:

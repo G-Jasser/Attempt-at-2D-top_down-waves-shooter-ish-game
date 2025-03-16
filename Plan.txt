@@ -10,4 +10,4 @@
 + enemy spawn?
 - stats component
 - map
-- player weapons?
++ player weapons?
