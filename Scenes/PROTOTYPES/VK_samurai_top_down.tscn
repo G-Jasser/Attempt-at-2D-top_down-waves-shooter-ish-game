@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4saxxrwwajav"]
+
+[ext_resource type="Texture2D" uid="uid://dvs0i3478m2ed" path="res://Assets/Sprites/samurai_skeleton.png" id="1_w5dcd"]
+
+[node name="Testing skeleton" type="Node2D"]
+
+[node name="Polygons" type="Node2D" parent="."]
+
+[node name="torso" type="Polygon2D" parent="Polygons"]
+position = Vector2(-56, -16)
+texture = ExtResource("1_w5dcd")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(36, 5, 42, -5.96046e-08, 70, -5.96046e-08, 76, 5, 75, 11, 73, 13, 73, 19, 75, 21, 76, 27, 71, 32, 41, 32, 36, 27, 37, 21, 39, 19, 39, 13, 37, 11)
+uv = PackedVector2Array(36, 5, 42, -5.96046e-08, 70, -5.96046e-08, 76, 5, 75, 11, 73, 13, 73, 19, 75, 21, 76, 27, 71, 32, 41, 32, 36, 27, 37, 21, 39, 19, 39, 13, 37, 11)
+bones = ["torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/right arm", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/left arm", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="left arm" type="Polygon2D" parent="Polygons"]
+position = Vector2(-31, -20)
+texture = ExtResource("1_w5dcd")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(11, 5, 9, 3, 5, 3, 3, 5, 3, 7, 0, 13, 0, 17, 4, 24, 9, 28, 12, 28, 15, 25, 16, 23, 16, 17, 14, 15, 11, 15, 10, 15, 10, 12, 12, 9, 12, 7)
+uv = PackedVector2Array(11, 5, 9, 3, 5, 3, 3, 5, 3, 7, 0, 13, 0, 17, 4, 24, 9, 28, 12, 28, 15, 25, 16, 23, 16, 17, 14, 15, 11, 15, 10, 15, 10, 12, 12, 9, 12, 7)
+bones = ["torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/right arm", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/left arm", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="right arm" type="Polygon2D" parent="Polygons"]
+position = Vector2(-1, -20)
+texture = ExtResource("1_w5dcd")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(21, 5, 23, 3, 27, 3, 29, 5, 29, 7, 32, 13, 32, 17, 28, 24, 23, 28, 20, 28, 17, 25, 16, 23, 16, 17, 18, 15, 21, 15, 22, 15, 22, 12, 20, 9, 20, 7)
+uv = PackedVector2Array(21, 5, 23, 3, 27, 3, 29, 5, 29, 7, 32, 13, 32, 17, 28, 24, 23, 28, 20, 28, 17, 25, 16, 23, 16, 17, 18, 15, 21, 15, 22, 15, 22, 12, 20, 9, 20, 7)
+bones = ["torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/right arm", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/left arm", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+
+[node name="torso" type="Bone2D" parent="Skeleton2D"]
+rest = Transform2D(1, 0, 0, 1, 0, 0)
+
+[node name="right arm" type="Bone2D" parent="Skeleton2D/torso"]
+position = Vector2(22, 2)
+rest = Transform2D(1, 0, 0, 1, 22, 2)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = -90.0
+
+[node name="left arm" type="Bone2D" parent="Skeleton2D/torso"]
+position = Vector2(-22, 2)
+scale = Vector2(0.998355, 1)
+rest = Transform2D(0.998355, 0, 0, 1, -22, 2)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = -90.0
