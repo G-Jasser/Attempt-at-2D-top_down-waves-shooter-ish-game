@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi2jtdcwoq6a3"]
+
+[ext_resource type="PackedScene" uid="uid://cf8oystgri27y" path="res://Scenes/Levels/Layouts/layout_1.tscn" id="1_vhjki"]
+[ext_resource type="PackedScene" uid="uid://5bqdpq03813u" path="res://Scenes/PROTOTYPES/manual_skeleton.tscn" id="2_157w7"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Map" parent="." instance=ExtResource("1_vhjki")]
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(438, 282)
+zoom = Vector2(4, 4)
+
+[node name="Manual Skeleton" parent="." instance=ExtResource("2_157w7")]
+position = Vector2(436, 284)
